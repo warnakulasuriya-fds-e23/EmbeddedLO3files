@@ -34,5 +34,5 @@ ISR(INT1_vect){
 		PORTB &= ~(1<<PB5); //same thing as above commented line
 	}
 	
-	toggle = 1-toggle; //if toggle was 1 previously it will now become 1 and vice versa
+	toggle = 1-toggle; //if toggle was 1 previously it will now become 0 and vice versa
 }
