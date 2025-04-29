@@ -1,0 +1,174 @@
+
+pushButtonToggle.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000002  00800100  0000010a  0000017e  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         0000010a  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .comment      00000030  00000000  00000000  00000180  2**0
+                  CONTENTS, READONLY
+  3 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  000001b0  2**2
+                  CONTENTS, READONLY
+  4 .debug_aranges 00000028  00000000  00000000  000001f0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   000006a9  00000000  00000000  00000218  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 00000628  00000000  00000000  000008c1  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   00000243  00000000  00000000  00000ee9  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  00000054  00000000  00000000  0000112c  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    0000038c  00000000  00000000  00001180  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    00000063  00000000  00000000  0000150c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 00000018  00000000  00000000  0000156f  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 34 00 	jmp	0x68	; 0x68 <__ctors_end>
+   4:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+   8:	0c 94 58 00 	jmp	0xb0	; 0xb0 <__vector_2>
+   c:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  10:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  14:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  18:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  1c:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  20:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  24:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  28:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  2c:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  30:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  34:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  38:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  3c:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  40:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  44:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  48:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  4c:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  50:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  54:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  58:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  5c:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  60:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  64:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+
+00000068 <__ctors_end>:
+  68:	11 24       	eor	r1, r1
+  6a:	1f be       	out	0x3f, r1	; 63
+  6c:	cf ef       	ldi	r28, 0xFF	; 255
+  6e:	d8 e0       	ldi	r29, 0x08	; 8
+  70:	de bf       	out	0x3e, r29	; 62
+  72:	cd bf       	out	0x3d, r28	; 61
+
+00000074 <__do_copy_data>:
+  74:	11 e0       	ldi	r17, 0x01	; 1
+  76:	a0 e0       	ldi	r26, 0x00	; 0
+  78:	b1 e0       	ldi	r27, 0x01	; 1
+  7a:	ea e0       	ldi	r30, 0x0A	; 10
+  7c:	f1 e0       	ldi	r31, 0x01	; 1
+  7e:	02 c0       	rjmp	.+4      	; 0x84 <__do_copy_data+0x10>
+  80:	05 90       	lpm	r0, Z+
+  82:	0d 92       	st	X+, r0
+  84:	a2 30       	cpi	r26, 0x02	; 2
+  86:	b1 07       	cpc	r27, r17
+  88:	d9 f7       	brne	.-10     	; 0x80 <__do_copy_data+0xc>
+  8a:	0e 94 4b 00 	call	0x96	; 0x96 <main>
+  8e:	0c 94 83 00 	jmp	0x106	; 0x106 <_exit>
+
+00000092 <__bad_interrupt>:
+  92:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+00000096 <main>:
+
+volatile int toggle = 1;
+int main(void)
+{
+    /* Replace with your application code */
+	DDRB |= 0B00100000; // PORTB : PIN5 set to output
+  96:	84 b1       	in	r24, 0x04	; 4
+  98:	80 62       	ori	r24, 0x20	; 32
+  9a:	84 b9       	out	0x04, r24	; 4
+	//EICRA |= 0B00001100; //ISC 11 = 1, ISC110 = 1(Rising Edge Interrupt)
+	EICRA |= (1 << ISC11) | (1 << ISC10); //same thing as above commented line (to find out that ISC11 and ISC10 works for EICRA refer the data sheet)
+  9c:	e9 e6       	ldi	r30, 0x69	; 105
+  9e:	f0 e0       	ldi	r31, 0x00	; 0
+  a0:	80 81       	ld	r24, Z
+  a2:	8c 60       	ori	r24, 0x0C	; 12
+  a4:	80 83       	st	Z, r24
+	EIMSK |= 0B00000010;// INT1 is selected
+  a6:	8d b3       	in	r24, 0x1d	; 29
+  a8:	82 60       	ori	r24, 0x02	; 2
+  aa:	8d bb       	out	0x1d, r24	; 29
+	
+	sei(); //Global Interrupt 
+  ac:	78 94       	sei
+  ae:	ff cf       	rjmp	.-2      	; 0xae <main+0x18>
+
+000000b0 <__vector_2>:
+    while (1) 
+    {
+    }
+}
+
+ISR(INT1_vect){
+  b0:	1f 92       	push	r1
+  b2:	0f 92       	push	r0
+  b4:	0f b6       	in	r0, 0x3f	; 63
+  b6:	0f 92       	push	r0
+  b8:	11 24       	eor	r1, r1
+  ba:	2f 93       	push	r18
+  bc:	3f 93       	push	r19
+  be:	8f 93       	push	r24
+  c0:	9f 93       	push	r25
+	if (toggle)
+  c2:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__DATA_REGION_ORIGIN__>
+  c6:	90 91 01 01 	lds	r25, 0x0101	; 0x800101 <__DATA_REGION_ORIGIN__+0x1>
+  ca:	89 2b       	or	r24, r25
+  cc:	21 f0       	breq	.+8      	; 0xd6 <__vector_2+0x26>
+	{
+		//PORTB |= 0B00100000; 	
+		PORTB |= (1<<PB5); // same thing as above commented line
+  ce:	85 b1       	in	r24, 0x05	; 5
+  d0:	80 62       	ori	r24, 0x20	; 32
+  d2:	85 b9       	out	0x05, r24	; 5
+  d4:	03 c0       	rjmp	.+6      	; 0xdc <__vector_2+0x2c>
+	} 
+	else
+	{
+		//PORTB &= 0B11011111;
+		PORTB &= ~(1<<PB5); //same thing as above commented line
+  d6:	85 b1       	in	r24, 0x05	; 5
+  d8:	8f 7d       	andi	r24, 0xDF	; 223
+  da:	85 b9       	out	0x05, r24	; 5
+	}
+	
+	toggle = 1-toggle; //if toggle was 1 previously it will now become 1 and vice versa
+  dc:	20 91 00 01 	lds	r18, 0x0100	; 0x800100 <__DATA_REGION_ORIGIN__>
+  e0:	30 91 01 01 	lds	r19, 0x0101	; 0x800101 <__DATA_REGION_ORIGIN__+0x1>
+  e4:	81 e0       	ldi	r24, 0x01	; 1
+  e6:	90 e0       	ldi	r25, 0x00	; 0
+  e8:	82 1b       	sub	r24, r18
+  ea:	93 0b       	sbc	r25, r19
+  ec:	90 93 01 01 	sts	0x0101, r25	; 0x800101 <__DATA_REGION_ORIGIN__+0x1>
+  f0:	80 93 00 01 	sts	0x0100, r24	; 0x800100 <__DATA_REGION_ORIGIN__>
+  f4:	9f 91       	pop	r25
+  f6:	8f 91       	pop	r24
+  f8:	3f 91       	pop	r19
+  fa:	2f 91       	pop	r18
+  fc:	0f 90       	pop	r0
+  fe:	0f be       	out	0x3f, r0	; 63
+ 100:	0f 90       	pop	r0
+ 102:	1f 90       	pop	r1
+ 104:	18 95       	reti
+
+00000106 <_exit>:
+ 106:	f8 94       	cli
+
+00000108 <__stop_program>:
+ 108:	ff cf       	rjmp	.-2      	; 0x108 <__stop_program>
