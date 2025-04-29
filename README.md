@@ -1,7 +1,7 @@
 # Please open the main.c files within the relevant folder to read the code parts
 
 ```diff
-- Click on one of the following links for to directly be redirected to relevant main.c
+- Click on one of the following links  to be  redirected to relevant main.c
 ```
 
 ## [LED Blinking - inside 1ImplementationLesson](https://github.com/warnakulasuriya-fds-e23/EmbeddedLO3files/blob/master/1implementationLesson/LEDBlinkCode/LEDBlinkCode/main.c)
