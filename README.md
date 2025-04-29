@@ -1,6 +1,8 @@
 # Please open the main.c files within the relevant folder to read the code parts
 
-Click on one of the following links for quick navigation
+```diff
+@@ Click on one of the following links for quick navigation
+```
 
 ## [External interrupt - inside 2ImplementationLesson](https://github.com/warnakulasuriya-fds-e23/EmbeddedLO3files/blob/master/2ImplemetationLesson/PushButtonToggle/pushButtonToggle/pushButtonToggle/main.c)
 
